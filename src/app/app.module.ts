@@ -10,19 +10,22 @@ import { NewsapiserviceService } from './newsapiservice.service';
 import { TechnewsComponent } from './technews/technews.component';
 // for HttpClient import:
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
-
+import { PrimeNgFlexPracticeComponent } from './prime-ng-flex-practice/prime-ng-flex-practice.component';
+import { ButtonModule } from 'primeng/button';
 @NgModule({
   declarations: [
     AppComponent,
     TopheadingComponent,
-    TechnewsComponent
+    TechnewsComponent,
+    PrimeNgFlexPracticeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule ,
-    LoadingBarHttpClientModule
+    LoadingBarHttpClientModule,
+    ButtonModule
   ],
   providers: [NewsapiserviceService,
     
