@@ -12,24 +12,30 @@ import { TechnewsComponent } from './technews/technews.component';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 import { PrimeNgFlexPracticeComponent } from './prime-ng-flex-practice/prime-ng-flex-practice.component';
 import { ButtonModule } from 'primeng/button';
+import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
+import { ChartComponent } from './chart/chart.component';
+import { ChartModule } from 'primeng/chart';
+
 @NgModule({
   declarations: [
     AppComponent,
     TopheadingComponent,
     TechnewsComponent,
-    PrimeNgFlexPracticeComponent
+    PrimeNgFlexPracticeComponent,
+    ChartComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule ,
+    HttpClientModule,
     LoadingBarHttpClientModule,
-    ButtonModule
+    ButtonModule,
+    ChartModule,
   ],
-  providers: [NewsapiserviceService,
-    
-  ],
-  bootstrap: [AppComponent]
+
+  providers: [provideCharts(withDefaultRegisterables()), NewsapiserviceService],
+
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
